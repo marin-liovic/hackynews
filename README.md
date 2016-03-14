@@ -1,5 +1,5 @@
 # hackynews
-Hacky News is a copy of Hacker News written in node.js/coffescript. Currently, it implements only basic functionality.
+Hacky News is a copy of Hacker News written in node.js/coffeescript. Currently, it implements only basic functionality.
 
 ##Installation
 1. Install coffeescript: npm install -g coffee-script
