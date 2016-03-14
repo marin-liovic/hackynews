@@ -1,0 +1,25 @@
+extends ./layout.jade
+
+block title
+    title Hacky News - Submit
+
+block content
+    div
+        form.form(action="/news", method="post")
+            div.input-group
+                span.input-group-addon(id="span1") Title:
+                input.form-control(type="text", name="title", aria-describedby="span1")
+            br
+            div.input-group
+                span.input-group-addon(id="span2") URL:
+                input.form-control(type="text", name="url", aria-describedby="span2")
+            p.h4.text-primary or
+            div.input-group
+                span.input-group-addon(id="span3") Text:
+                textarea.form-control(type="text", name="text", rows= 4, aria-describedby="span3")
+            br
+            div.text-center
+                button.btn.btn-lg.btn-primary(type="submit") Submit
+            br
+            p.h4.text-primary Leave url blank to submit a question for discussion. If there is no url, the text (if any) will appear at the top of the thread.
+

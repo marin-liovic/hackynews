@@ -1,0 +1,29 @@
+{
+  "name": "hackynews",
+  "version": "0.1.0",
+  "description": "Just another Hacker News clone...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "hacky",
+    "news",
+    "hacker",
+    "clone"
+  ],
+  "author": "Marin Liovic",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "~1.15.0",
+    "coffee-script": "~1.10.0",
+    "express": "~4.13.4",
+    "express-session": "^1.13.0",
+    "jade": "~1.11.0",
+    "lodash": "~4.6.1",
+    "mongodb": "~2.1.7",
+    "restify-errors": "^4.2.1"
+  }
+}

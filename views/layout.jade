@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        block title
+            title Default title
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+        link(rel="stylesheet" href="/css/style.css")
+    body
+        div.container
+            nav.navbar.navbar-default
+                div.navbar-header
+                    button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-collapse")
+                    a.navbar-brand(href="/") Hacky News
+                div.navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href="/newest") New
+                        li
+                            a(href="/show") Show
+                        li
+                            a(href="/ask") Ask
+                        li
+                            a(href="/submit") Submit
+                    ul.nav.navbar-nav.navbar-right
+                        if user
+                            li
+                                span.navbar-text
+                                    span.h4=user.username
+                                    = " | "
+                                    a(href="/logout?goto=#{path ? path : ''}") (Logout)
+                        else
+                            li
+                                a(href="/login") Login
+        #content.container
+            block content
+                div Content
+        br
+        footer.footer
+            div.container
+                hr
+                p.text-muted.text-center Hacky News
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")

@@ -1,0 +1,48 @@
+extends ./layout.jade
+
+block title
+    title Hacky News - #{item.title}
+
+block content
+    table
+        tbody
+            tr
+                if (points.indexOf(item._id.toString()) === -1)
+                    td.col-md-1
+                        form.form-inline(action="/news/#{item._id}/point?goto=#{path ? path : ''}", method="post")
+                            button.btn.btn-link(type="submit")
+                                span.glyphicon.glyphicon-arrow-up(aria-hidden="true")
+                td
+                    div
+                        a.h3.text-primary(href=item.url)= item.title
+                        if item.site
+                            span.label
+                                a.text-info
+                                    | (#{item.site})
+                    div
+                        small
+                            | #{item.points} points by #{item.author} #{item.ago} ago
+    br
+    div
+        if item.text
+            p.lead= item.text
+    br
+    div
+        form.form(action="/news/#{item._id}/comments", method="post")
+            div.input-group.col-xs-6
+                span.input-group-addon(id="span3") Comment:
+                textarea.form-control(type="text", name="text", rows=6, aria-describedby="span3")
+            br
+            div
+                button.btn.btn-primary(type="submit") Add comment
+    br
+    br
+    table.table.table-responsive
+        tbody
+            each comment in comments
+                tr
+                    td
+                        div
+                            small.text-primary
+                                | #{comment.author} | #{comment.ago} ago
+                        span=comment.text

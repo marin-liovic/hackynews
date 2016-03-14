@@ -1,0 +1,26 @@
+extends ./layout.jade
+
+block title
+    title Hacky News
+
+block content
+    table.table.table-responsive
+        tbody
+            each item, index in news
+                tr
+                    td.text-center.col-md-1
+                        form.form-inline(action="/news/#{item._id}/point?goto=#{path ? path : ''}", method="post")
+                            span.text.text-primary #{index + 1}.
+                            if (points.indexOf(item._id.toString()) === -1)
+                                button.btn.btn-link(type="submit")
+                                    span.glyphicon.glyphicon-arrow-up(aria-hidden="true")
+                    td.col-md-11
+                        div
+                            a.h4.text-primary(href=item.url)= item.title
+                            if item.site
+                                span.label
+                                    a.text-info
+                                        | (#{item.site})
+                        div
+                            small
+                                | #{item.points} points by #{item.author} #{item.ago} ago

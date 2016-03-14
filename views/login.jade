@@ -1,0 +1,29 @@
+extends ./layout.jade
+
+block title
+    title Hacky News - Login
+
+block content
+    form.form-signin(action="/login", method="post")
+        h2.form-signin-heading Login
+        div.input-group
+            label.sr-only(for="username") username
+            input.form-control(id="username", placeholder="username", name="username", autofocus=)
+        div.input-group
+            label.sr-only(for="password") password
+            input.form-control(id="password", type="password", placeholder="password", name="password")
+        br
+        div.input-group
+            button.btn.btn-primary.btn-block(type="submit") login
+    br
+    form.form-signin(action="/users", method="post")
+        h2.form-signin-heading Create Account
+        div.input-group
+            label.sr-only(for="username") username
+            input.form-control(id="username", placeholder="username", name="username")
+        div.input-group
+            label.sr-only(for="password") password
+            input.form-control(id="password", type="password", placeholder="password", name="password")
+        br
+        div.input-group
+            button.btn.btn-primary.btn-block(type="submit") create account
