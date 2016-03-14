@@ -20,15 +20,15 @@ app.use (req, res, next) ->
   res.locals.user = req.session.user
   next()
 
-app.use require './news/news_router'
-app.use require './submit/submit_router'
-app.use require './logout/logout_router'
-app.use require './thanks/thanks_router'
-app.use require './newest/newest_router'
-app.use require './show/show_router'
-app.use require './ask/ask_router'
-app.use require './login/login_router'
-app.use require './users/users_router'
+app.use require './lib/news/news_router'
+app.use require './lib/submit/submit_router'
+app.use require './lib/logout/logout_router'
+app.use require './lib/thanks/thanks_router'
+app.use require './lib/newest/newest_router'
+app.use require './lib/show/show_router'
+app.use require './lib/ask/ask_router'
+app.use require './lib/login/login_router'
+app.use require './lib/users/users_router'
 
 app.use (err, req, res, next) ->
   res.status err.statusCode || 500
