@@ -37,3 +37,4 @@ node_modules
 
 # Generated Javascript
 /lib
+index.js
