@@ -14,6 +14,7 @@ Hacky News is a copy of Hacker News written in node.js/coffeescript. Currently, 
 
 ##TODO
 Some functionality is still missing. Also, needs:
+ - tests
  - client and server side data validations
  - pagination
  - better security
